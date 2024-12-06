@@ -1,4 +1,4 @@
-// Toggle mobile menu with animation
+
 const menuIcon = document.getElementById("menu");
 const navbar = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".navbar ul li a");
@@ -13,7 +13,7 @@ menuIcon.addEventListener("click", () => {
   }
 });
 
-// Smooth scrolling for navigation links
+
 navLinks.forEach(link => {
   link.addEventListener("click", event => {
     event.preventDefault();
@@ -22,20 +22,15 @@ navLinks.forEach(link => {
 
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth" });
-
-      // Highlight the selected section in the navigation
       navLinks.forEach(l => l.classList.remove("active-link"));
       link.classList.add("active-link");
     }
-
-    // Close menu after clicking a link (for mobile view)
     if (window.innerWidth < 768) {
       navbar.classList.remove("active");
     }
   });
 });
 
-// Scroll-to-top button functionality
 const scrollToTopBtn = document.getElementById("scrollToTop");
 
 window.addEventListener("scroll", () => {
@@ -51,15 +46,15 @@ scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Decorative hover effects for nav links
+
 navLinks.forEach(link => {
   link.addEventListener("mouseover", () => {
-    link.style.color = "#ff6347"; // Change color on hover
-    link.style.transform = "scale(1.1)"; // Enlarge slightly
+    link.style.color = "#ff6347";
+    link.style.transform = "scale(1.1)";
   });
 
   link.addEventListener("mouseout", () => {
-    link.style.color = ""; // Reset color
-    link.style.transform = "scale(1)"; // Reset scale
+    link.style.color = "";
+    link.style.transform = "scale(1)";
   });
 });
